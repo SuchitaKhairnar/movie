@@ -33,7 +33,7 @@ const convertDbObjectToResponseObject = (dbObject) => {
 };
 app.get("/movies/", async (request, response) => {
   const getMoviesQuery = `
-    select * from movie; 
+    select movie_name from movie; 
     `;
   const moviesArray = await database.all(getMoviesQuery);
   response.send(
